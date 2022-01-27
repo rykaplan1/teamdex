@@ -82,7 +82,7 @@ router.delete('/:id', async (req, res) => {
       where: {
         id: req.params.id,
 
-        // Commented out for testing, uncomment for final testing and deployment
+        // TODO: Commented out for testing, uncomment for final testing and deployment
         // user_id: req.session.user_id,
       },
     });

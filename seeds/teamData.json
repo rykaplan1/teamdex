@@ -1,0 +1,52 @@
+[
+  {
+    "team_name": "Misty's water types",
+    "game": "red-blue",
+    "num_pokemon": 2
+  },
+  {
+    "team_name": "Brock's rock types",
+    "game": "red-blue",
+    "num_pokemon": 2
+  },
+  {
+    "team_name": "Ash's Kanto team",
+    "game": "red-blue",
+    "num_pokemon": 6
+  },
+  {
+    "team_name": "Ash's Johto team",
+    "game": "gold-silver",
+    "num_pokemon": 6
+  },
+  {
+    "team_name": "Ash's Hoenn team",
+    "game": "ruby-sapphire",
+    "num_pokemon": 6
+  },
+  {
+    "team_name": "Ash's Sinnoh team",
+    "game": "platinum",
+    "num_pokemon": 6
+  },
+  {
+    "team_name": "Ash's Unova team",
+    "game": "black-white",
+    "num_pokemon": 6
+  },
+  {
+    "team_name": "Ash's Kalos team",
+    "game": "x-y",
+    "num_pokemon": 6
+  },
+  {
+    "team_name": "Ash's Alola team",
+    "game": "sun-moon",
+    "num_pokemon": 6
+  },
+  {
+    "team_name": "Ash's Galar team",
+    "game": "sword-shield",
+    "num_pokemon": 6
+  }
+]

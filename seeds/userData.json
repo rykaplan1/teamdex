@@ -8,5 +8,10 @@
     "name": "Ash",
     "email": "ash@poke.com",
     "password": "pikachuIsTheBest1"
+  },
+  {
+    "name": "Brock",
+    "email": "brockrocks@poke.com",
+    "password": "dryingpan"
   }
 ]

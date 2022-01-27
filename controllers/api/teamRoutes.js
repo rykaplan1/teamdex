@@ -37,6 +37,30 @@ router.get('/:id', async (req, res) => {
   };
 });
 
+// GET for team by logged in user
+// route for testing in insomnia
+router.get('/my_team/:id', async (req, res) => {
+  // route for deployment
+  // router.get('/my_team', async (req, res) => {
+  try {
+    // variable for testing insomnia
+    const dbTeamData = await Team.findAll({ where: { user_id: req.params.id } });
+    // variable for deployment
+    // const dbTeamData = await Team.findAll({ where: { user_id: req.session.userId } });
+    const teams = dbTeamData.map(team => team.get({ plain: true }));
+
+    if (!teams) {
+      res.status(404).json({ message: 'No team found in the database!' });
+      return;
+    };
+
+    res.status(200).json(teams);
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  };
+});
+
 // POST for user to add team
 // TODO: Add withAuth after testing with insomnia
 router.post('/', async (req, res) => {

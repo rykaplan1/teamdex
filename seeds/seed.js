@@ -22,37 +22,37 @@ const seedDatabase = async () => {
   for (let i = 0; i < 2; i++) {
     await Pokemon.create({
       ...pokemonData[i],
-      team_id: 0,
-      pokemon_ids: "[3, 4]"
+      team_id: 1,
     });
   }
 
   await Team.create({
     ...teamData[1],
-    user_id: 3
+    user_id: 3,
+    pokemon_ids: "[3, 4]"
   });
 
   for (let i = 2; i < 4; i++) {
     await Pokemon.create({
       ...pokemonData[i],
-      team_id: 1
+      team_id: 2
     });
   }
 
-  for (let i = 3; i <= teamData.length; i++) {
+  for (let i = 2; i < teamData.length; i++) {
     const pokemonIds = [];
     for (let j = 0; j < 6; j++) {
       pokemonIds.push(3 + 6 * (i - 2) + j);
     }
     await Team.create({
       ...teamData[i],
-      user_id: 2,
+      user_id: 3,
       pokemon_ids: JSON.stringify(pokemonIds)
     })
   }
 
   let addedPokemon = 0;
-  let ashTeamId = 2;
+  let ashTeamId = 3;
   for (let i = 4; i < pokemonData.length; i++) {
     await Pokemon.create({
       ...pokemonData[i],

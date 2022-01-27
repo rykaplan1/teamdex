@@ -1,6 +1,5 @@
 const router = require('express').Router();
-// Change destructured object with whatever the model classes will be
-const { Team, Pokemon } = require('../../models');
+const { User, Team, Pokemon } = require('../../models');
 
 // GET for all teams in db
 router.get('/', async (req, res) => {

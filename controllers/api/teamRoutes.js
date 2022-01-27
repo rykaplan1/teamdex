@@ -6,6 +6,12 @@ router.get('/', async (req, res) => {
   try {
     const dbTeamData = await Team.findAll({ include: [{ model: User, attributes: { exclude: 'password' } }] });
     const teams = dbTeamData.map(team => team.get({ plain: true }));
+
+    if (!teams) {
+      res.status(404).json({ message: 'No team found in the database!' });
+      return;
+    };
+
     res.status(200).json(teams);
   } catch (err) {
     console.log(err);
@@ -18,6 +24,12 @@ router.get('/:id', async (req, res) => {
   try {
     const dbTeamData = await Team.findByPk(req.params.id, { include: [{ model: User, attributes: { exclude: 'password' } }] });
     const team = dbTeamData.get({ plain: true });
+
+    if (!team) {
+      res.status(404).json({ message: 'No team found with this id!' });
+      return;
+    };
+
     res.status(200).json(team)
   } catch (err) {
     console.log(err);
@@ -49,10 +61,39 @@ router.put('/:id', async (req, res) => {
     const updatedTeam = await Team.update({
       team_name: req.body.team_name,
       num_pokemon: req.body.num_pokemon
-    })
+    });
+
+    if (!updatedTeam) {
+      res.status(404).json({ message: 'No team found with this id!' });
+      return;
+    };
+
     res.status(200).json(updatedTeam);
   } catch (err) {
     console.log(err);
+    res.status(500).json(err);
+  };
+});
+
+// DELETE for removing a team
+router.delete('/:id', async (req, res) => {
+  try {
+    const team = await Team.destroy({
+      where: {
+        id: req.params.id,
+
+        // Commented out for testing, uncomment for final testing and deployment
+        // user_id: req.session.user_id,
+      },
+    });
+
+    if (!team) {
+      res.status(404).json({ message: 'No team found with this id!' });
+      return;
+    };
+
+    res.status(200).json(team);
+  } catch (err) {
     res.status(500).json(err);
   };
 });

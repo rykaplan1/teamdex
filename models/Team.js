@@ -19,10 +19,6 @@ Team.init(
       type: DataTypes.STRING,
       allowNull: false
     },
-    num_pokemon: {
-      type: DataTypes.INTEGER,
-      allowNull: false
-    },
     upvotes: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -36,6 +32,10 @@ Team.init(
         unique: false
       }
     },
+    pokemon_ids: {
+      type: DataTypes.STRING,
+      allowNull: false
+    }
   },
   {
     sequelize,

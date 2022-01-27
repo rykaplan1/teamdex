@@ -1,12 +1,17 @@
 [
   {
-    "name": "Misty",
+    "username": "Misty",
     "email": "wateristhebest@poke.com",
     "password": "WaterGymLeader1"
   },
   {
-    "name": "Ash",
+    "username": "Ash",
     "email": "ash@poke.com",
     "password": "pikachuIsTheBest1"
+  },
+  {
+    "username": "Brock",
+    "email": "brockrocks@poke.com",
+    "password": "dryingpan"
   }
 ]

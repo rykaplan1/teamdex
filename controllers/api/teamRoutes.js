@@ -42,4 +42,19 @@ router.post('/', async (req, res) => {
   };
 });
 
+// PUT for updating a team
+// TODO: Add withAuth after testing with insomnia
+router.put('/:id', async (req, res) => {
+  try {
+    const updatedTeam = await Team.update({
+      team_name: req.body.team_name,
+      num_pokemon: req.body.num_pokemon
+    })
+    res.status(200).json(updatedTeam);
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  };
+});
+
 module.exports = router;

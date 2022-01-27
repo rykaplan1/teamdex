@@ -17,7 +17,8 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
   try {
     const dbTeamData = await Team.findByPk(req.params.id, { include: [{ model: User, attributes: { exclude: 'password' } }] });
-    res.status(200).json
+    const team = dbTeamData.get({ plain: true });
+    res.status(200).json(team)
   } catch (err) {
     console.log(err);
     res.status(500).json(err);

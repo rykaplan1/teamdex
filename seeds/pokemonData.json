@@ -1,1 +1,242 @@
-[{}]
+[
+  {
+    "pokemon_name": "Psyduck",
+    "type_1": "water"
+  },
+  {
+    "pokemon_name": "Starmie",
+    "type_1": "water",
+    "type_2": "psychic"
+  },
+  {
+    "pokemon_name": "Geodude",
+    "type_1": "rock",
+    "type_2": "ground"
+  },
+  {
+    "pokemon_name": "Onix",
+    "type_1": "rock",
+    "type_2": "ground"
+  },
+  {
+    "pokemon_name": "Pikachu",
+    "type_1": "electric"
+  },
+  {
+    "pokemon_name": "Squirtle",
+    "type_1": "water"
+  },
+  {
+    "pokemon_name": "Bulbasaur",
+    "type_1": "grass",
+    "type_2": "poison"
+  },
+  {
+    "pokemon_name": "Charizard",
+    "type_1": "fire",
+    "type_2": "flying"
+  },
+  {
+    "pokemon_name": "Pidgeotto",
+    "type_1": "normal",
+    "type_2": "flying"
+  },
+  {
+    "pokemon_name": "Butterfree",
+    "type_1": "bug",
+    "type_2": "flying"
+  },
+  {
+    "pokemon_name": "Pikachu",
+    "type_1": "electric"
+  },
+  {
+    "pokemon_name": "Cyndaquil",
+    "type_1": "fire"
+  },
+  {
+    "pokemon_name": "Totodile",
+    "type_1": "water"
+  },
+  {
+    "pokemon_name": "Bayleef",
+    "type_1": "grass"
+  },
+  {
+    "pokemon_name": "Noctowl",
+    "type_1": "normal",
+    "type_2": "flying"
+  },
+  {
+    "pokemon_name": "Donphan",
+    "type_1": "ground"
+  },
+  {
+    "pokemon_name": "Pikachu",
+    "type_1": "electric"
+  },
+  {
+    "pokemon_name": "Swellow",
+    "type_1": "normal",
+    "type_2": "flying"
+  },
+  {
+    "pokemon_name": "Grovyle",
+    "type_1": "grass"
+  },
+  {
+    "pokemon_name": "Corphish",
+    "type_1": "water"
+  },
+  {
+    "pokemon_name": "Torkoal",
+    "type_1": "fire"
+  },
+  {
+    "pokemon_name": "Glalie",
+    "type_1": "ice"
+  },
+  {
+    "pokemon_name": "Pikachu",
+    "type_1": "electric"
+  },
+  {
+    "pokemon_name": "Staraptor",
+    "type_1": "normal",
+    "type_2": "flying"
+  },
+  {
+    "pokemon_name": "Infernape",
+    "type_1": "fire",
+    "type_2": "fighting"
+  },
+  {
+    "pokemon_name": "Torterra",
+    "type_1": "grass",
+    "type_2": "ground"
+  },
+  {
+    "pokemon_name": "Buizel",
+    "type_1": "water"
+  },
+  {
+    "pokemon_name": "Gible",
+    "type_1": "dragon",
+    "type_2": "ground"
+  },
+  {
+    "pokemon_name": "Pikachu",
+    "type_1": "electric"
+  },
+  {
+    "pokemon_name": "Pignite",
+    "type_1": "fire",
+    "type_2": "fighting"
+  },
+  {
+    "pokemon_name": "Leavanny",
+    "type_1": "bug",
+    "type_2": "grass"
+  },
+  {
+    "pokemon_name": "Palpitoad",
+    "type_1": "water",
+    "type_2": "ground"
+  },
+  {
+    "pokemon_name": "Unfezant",
+    "type_1": "normal",
+    "type_2": "flying"
+  },
+  {
+    "pokemon_name": "Boldore",
+    "type_1": "rock"
+  },
+  {
+    "pokemon_name": "Pikachu",
+    "type_1": "electric"
+  },
+  {
+    "pokemon_name": "Talonflame",
+    "type_1": "fire",
+    "type_2": "flying"
+  },
+  {
+    "pokemon_name": "Greninja",
+    "type_1": "water",
+    "type_2": "dark"
+  },
+  {
+    "pokemon_name": "Goodra",
+    "type_1": "dragon"
+  },
+  {
+    "pokemon_name": "Noivern",
+    "type_1": "flying",
+    "type_2": "dragon"
+  },
+  {
+    "pokemon_name": "Hawlucha",
+    "type_1": "fighting",
+    "type_2": "flying"
+  },
+  {
+    "pokemon_name": "Pikachu",
+    "type_1": "electric"
+  },
+  {
+    "pokemon_name": "Rowlet",
+    "type_1": "grass",
+    "type_2": "flying"
+  },
+  {
+    "pokemon_name": "Incineroar",
+    "type_1": "fire",
+    "type_2": "dark"
+  },
+  {
+    "pokemon_name": "Lycanroc",
+    "type_1": "rock"
+  },
+  {
+    "pokemon_name": "Melmetal",
+    "type_1": "steel"
+  },
+  {
+    "pokemon_name": "Naganadel",
+    "type_1": "Poison",
+    "type_2": "Dragon"
+  },
+  {
+    "pokemon_name": "Pikachu",
+    "type_1": "electric"
+  },
+  {
+    "pokemon_name": "Dragonite",
+    "type_1": "Dragon",
+    "type_2": "Flying"
+  },
+  {
+    "pokemon_name": "Gengar",
+    "type_1": "Ghost",
+    "type_2": "Poison"
+  },
+  {
+    "pokemon_name": "Lucario",
+    "type_1": "Fighting",
+    "type_2": "Steel"
+  },
+  {
+    "pokemon_name": "Gengar",
+    "type_1": "Ghost",
+    "type_2": "Poison"
+  },{
+    "pokemon_name": "Galarian Farfetch'd",
+    "type_1": "Fighting"
+  },
+  {
+    "pokemon_name": "Dracovish",
+    "type_1": "Water",
+    "type_2": "Dragon"
+  }
+]

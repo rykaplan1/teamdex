@@ -4,7 +4,7 @@ const { User, Team, Pokemon } = require('../../models');
 // GET for all teams in db
 router.get('/', async (req, res) => {
   try {
-    const dbTeamData = await Team.findAll({ include: [{ model: User, attributes: { exclude: 'password' } }] });
+    const dbTeamData = await Team.findAll({ include: [{ model: User, attributes: { exclude: 'password' } }, { model: Pokemon }] });
     const teams = dbTeamData.map(team => team.get({ plain: true }));
 
     if (!teams) {
@@ -22,7 +22,7 @@ router.get('/', async (req, res) => {
 // GET for team by the teams id
 router.get('/:id', async (req, res) => {
   try {
-    const dbTeamData = await Team.findByPk(req.params.id, { include: [{ model: User, attributes: { exclude: 'password' } }] });
+    const dbTeamData = await Team.findByPk(req.params.id, { include: [{ model: User, attributes: { exclude: 'password' } }, { model: Pokemon }] });
     const team = dbTeamData.get({ plain: true });
 
     if (!team) {
@@ -44,9 +44,9 @@ router.get('/my_team/:id', async (req, res) => {
   // router.get('/my_team', async (req, res) => {
   try {
     // variable for testing insomnia
-    const dbTeamData = await Team.findAll({ where: { user_id: req.params.id } });
+    const dbTeamData = await Team.findAll([{ where: { user_id: req.params.id } }, { model: Pokemon }]);
     // variable for deployment
-    // const dbTeamData = await Team.findAll({ where: { user_id: req.session.userId } });
+    // const dbTeamData = await Team.findAll([{ where: { user_id: req.session.userId } }, { model: Pokemon }]);
     const teams = dbTeamData.map(team => team.get({ plain: true }));
 
     if (!teams) {

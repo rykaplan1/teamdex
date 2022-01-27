@@ -69,7 +69,8 @@ router.post('/', async (req, res) => {
       team_name: req.body.team_name,
       game: req.body.game,
       num_pokemon: req.body.num_pokemon,
-      user_id: req.session.userId
+      user_id: req.session.userId,
+      pokemon_ids: req.body.pokemon_ids
     });
     res.status(200).json(newTeam);
   } catch (err) {
@@ -84,7 +85,8 @@ router.put('/:id', async (req, res) => {
   try {
     const updatedTeam = await Team.update({
       team_name: req.body.team_name,
-      num_pokemon: req.body.num_pokemon
+      num_pokemon: req.body.num_pokemon,
+      pokemon_ids: req.body.pokemon_ids
     });
 
     if (!updatedTeam) {

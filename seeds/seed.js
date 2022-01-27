@@ -13,7 +13,7 @@ const seedDatabase = async () => {
     returning: true,
   });
 
-  await Team.Create({
+  await Team.create({
     ...teamData[0],
     user_id: 0,
     pokemon_ids: "[0, 1]"
@@ -27,7 +27,7 @@ const seedDatabase = async () => {
     });
   }
 
-  await Team.Create({
+  await Team.create({
     ...teamData[1],
     user_id: 2
   });

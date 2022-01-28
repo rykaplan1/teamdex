@@ -37,4 +37,13 @@ router.get('/:id', async (req, res) => {
   };
 });
 
+// Add pokemon
+router.post('/', async (req, res) => {
+  try {
+    const newPokemon = await Pokemon.create()
+  } catch (err) {
+
+  }
+})
+
 module.exports = router;

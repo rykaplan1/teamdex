@@ -22,6 +22,9 @@ Pokemon.init(
     type_2: {
       type: DataTypes.STRING,
     },
+    sprite: {
+      type: DataTypes.STRING,
+    },
     team_id: {
       type: DataTypes.INTEGER,
       references: {

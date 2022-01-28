@@ -3,21 +3,21 @@ const searchInput = document.getElementById('pokemon-search'); // Drop down list
 const searchBtn = document.getElementById('search-btn'); // Search/submit button for searching a generation
 // const pokeSearch = require('pokemon.js');
 // pokeSearch.setLanguage('english');
-let pokeAPIURL = 'https://pokeapi.co/api/v2/generation/';
 
 // Search for all pokemon from a generation
 const searchGeneration = async (num) => {
     const pokemonArr = [];
     // Gets all pokemon available to specified generation (including previous)
-    // for (let i = num; i > 0; i--) {
-    pokeAPIURL += num;
-    const pokeData = await fetch(pokeAPIURL);
-    console.log(pokeData);
+    for (let i = num; i > 0; i--) {
+    const pokeAPIURL = `https://pokeapi.co/api/v2/generation/${i}`;
+    const response = await fetch(pokeAPIURL);
+    const pokeData = await response.json();
     // Add all pokemon (by name) to pokemonArr
-    // await pokemon_species.forEach(pokemon => {
-    //     pokemonArr.push(pokemon);
-    // });
-    // }
+    await pokeData.pokemon_species.forEach(pokemon => {
+        pokemonArr.push(pokemon);
+    });
+    }
+    return pokemonArr;
 }
 
 // TODO Generate list of pokemon to the page
@@ -28,9 +28,9 @@ const displayPokemonBulk = async function (pokemon) {
 }
 
 // TODO when 'search' is clicked search a generation and display the pokemon availible to that generation to the page in a scroll-able section
-searchBtn.addEventListener('click', (event) => {
+searchBtn.addEventListener('click', async (event) => {
     event.preventDefault();
     // take user input to search for pokemon in a certain generation
-    const pokeArr = searchGeneration(searchInput.value);
-    // displayPokemonBulk(pokeArr);
+    const pokeArr = await searchGeneration(searchInput.value);
+    displayPokemonBulk(pokeArr);
 });

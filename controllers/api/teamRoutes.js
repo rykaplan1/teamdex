@@ -30,7 +30,7 @@ router.get('/:id', async (req, res) => {
       return;
     };
 
-    res.status(200).json(team)
+    res.status(200).json(team);
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -65,6 +65,7 @@ router.post('/', async (req, res) => {
       game: req.body.game,
       user_id: req.session.userId
     });
+
     res.status(200).json(newTeam);
   } catch (err) {
     console.log(err);
@@ -79,14 +80,14 @@ router.put('/:id', async (req, res) => {
     const updatedTeam = await Team.update({
       team_name: req.body.team_name
     },
-    {
-      where: {
-        id: req.params.id,
+      {
+        where: {
+          id: req.params.id,
 
-        // TODO: Commented out for testing, uncomment for final testing and deployment
-        // user_id: req.session.user_id,
-      }
-    });
+          // TODO: Commented out for testing, uncomment for final testing and deployment
+          // user_id: req.session.user_id,
+        }
+      });
 
     if (!updatedTeam) {
       res.status(404).json({ message: 'No team found with this id!' });
@@ -110,7 +111,7 @@ router.delete('/:id', async (req, res) => {
 
         // TODO: Commented out for testing, uncomment for final testing and deployment
         // user_id: req.session.user_id,
-      },
+      }
     });
 
     if (!team) {

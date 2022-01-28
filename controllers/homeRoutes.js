@@ -10,6 +10,10 @@ router.get('/', async (req, res) => {
         {
           model: User,
           attributes: ['username']
+        },
+        {
+          model: Pokemon,
+          attributes: ['pokemon_name', 'sprite']
         }
       ],
       limit: 10,
@@ -67,7 +71,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
 
     const userTeams = userTeamData.get({ plain: true });
 
-    res.render('/dashboard', {
+    res.render('dashboard', {
       ...userTeams,
       logged_in: true
     });
@@ -82,7 +86,7 @@ router.get('/dashboard/team/:id', async (req, res) => {
     const teamData = await Team.findByPk(req.params.id, { include: [{ model: User, attributes: { exclude: 'password' } }, { model: Pokemon }] });
     const team = teamData.get({ plain: true });
   
-    res.render('/userteam', {
+    res.render('userteam', {
       ...team,
       logged_in: true
     })
@@ -98,7 +102,7 @@ router.get('/login', (req, res) => {
     return;
   }
 
-  res.render('/login');
+  res.render('login');
 });
 
 // GET Signup Page
@@ -108,7 +112,7 @@ router.get('/signup', (req, res) => {
     return;
   }
 
-  res.render('/signup');
+  res.render('signup');
 })
 
 module.exports = router;

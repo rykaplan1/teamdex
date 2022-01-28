@@ -34,7 +34,6 @@ Team.init(
     },
     pokemon_ids: {
       type: DataTypes.INTEGER,
-      allowNull: false,
       references: {
         model: 'pokemon',
         key: 'id',

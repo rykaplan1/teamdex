@@ -61,7 +61,6 @@ router.post('/', async (req, res) => {
 router.put('/:id', async (req, res) => {
   try {
     const updatedPokemon = await Pokemon.update({
-      pokemon_name: req.body.pokemon_name,
       type_1: req.body.type_1,
       type_2: req.body.type_2
     },

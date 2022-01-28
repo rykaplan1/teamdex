@@ -24,7 +24,7 @@
   </head>
   <body>
     <header>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="bg-dark" id="navbarHeader">
           <div class="container">
             <div class="row">
@@ -37,17 +37,17 @@
                     <ul class="navbar-nav mr-auto">
                       <li class="nav-item active">
                         {{#if loggedIn}}
-                        <a class="nav-link" href="#">Dashboard <span class="sr-only"> (current)</ span></a>
+                        <a class="nav-link" href="/dashboard">Dashboard <span class="sr-only"> (current)</span></a>
                       </li>
                       {{else}}
                       <li class="nav-item active">
-                        <a class="nav-link" href="#">Login <span class="sr-only">(current) </ span></a>
+                        <a class="nav-link" href="/login">Please Login <span class="sr-only">(current) </span></a>
                       </li>
                       {{/if}}
                     </ul>
                     <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search for Pokemon" aria-label="Search">
-                      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search for Pokemon" aria-label="Search" id="pokemon-search">
+                      <button class="btn btn-outline-success my-2 my-sm-0" id="search-btn" type="submit">Search</button>
                      </form>
                     </div>
               </div>

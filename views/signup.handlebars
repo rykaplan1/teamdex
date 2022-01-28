@@ -1,24 +1,20 @@
 <div class='row justify-space-between-md'>
-  <div class='login-card'>
-    <h2 class='page-title'>Signup</h2>
-    <form class='form signup-form'>
-      <div class='form-group'>
-        <label for='name-signup'>Name:</label>
-        <input class='form-input' type='text' id='name-signup' />
-      </div>
-      <div class='form-group'>
-        <label for='email-signup'>Email:</label>
-        <input class='form-input' type='text' id='email-signup' />
-      </div>
-      <div class='form-group'>
-        <label for='password-signup'>Password:</label>
-        <input class='form-input' type='password' id='password-signup' />
-      </div>
-      <div class='form-group'>
-        <button class='btn btn-primary' type='submit'>SIGN UP</button>
-      </div>
-    </form>
+  <form>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="input-email1" aria-describedby="emailHelp" placeholder="Enter your email">
+    <small id="emailHelp" class="form-text text-muted">Please enter a valid email to sign up</small>
   </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="input-password" placeholder="Password">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
 </div>
 
 <script src='./js/signup.js'></script>
+
+
+

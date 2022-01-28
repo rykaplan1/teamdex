@@ -8,10 +8,11 @@ const pokemonData = require('./pokemonData.json');
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
 
-  await User.bulkCreate(userData, {
-    individualHooks: true,
-    returning: true,
-  });
+  for (let i = 0; i < 3; i++) {
+    await User.create({
+      ...userData[i]
+    });
+  }
 
   await Team.create({
     ...teamData[0],

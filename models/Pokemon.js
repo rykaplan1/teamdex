@@ -24,6 +24,7 @@ Pokemon.init(
     },
     sprite: {
       type: DataTypes.STRING,
+      defaultValue: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png"
     },
     team_id: {
       type: DataTypes.INTEGER,

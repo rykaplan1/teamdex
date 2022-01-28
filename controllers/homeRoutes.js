@@ -10,6 +10,10 @@ router.get('/', async (req, res) => {
         {
           model: User,
           attributes: ['username']
+        },
+        {
+          model: Pokemon,
+          attributes: ['pokemon_name', 'sprite']
         }
       ],
       limit: 10,

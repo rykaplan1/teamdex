@@ -39,12 +39,12 @@ router.get('/:id', async (req, res) => {
 
 // GET for team by logged in user
 // route for testing in insomnia
-router.get('/my_team/:id', async (req, res) => {
+router.get('/my_teams', async (req, res) => {
   // route for deployment
-  // router.get('/my_team', async (req, res) => {
+  // router.get('/my_teams', async (req, res) => {
   try {
     // variable for testing insomnia
-    const dbTeamData = await Team.findAll([{ where: { user_id: req.params.id } }, { model: Pokemon }]);
+    const dbTeamData = await Team.findAll([{ where: { user_id: req.session.userId } }, { model: Pokemon }]);
     // variable for deployment
     // const dbTeamData = await Team.findAll([{ where: { user_id: req.session.userId } }, { model: Pokemon }]);
     const teams = dbTeamData.map(team => team.get({ plain: true }));
@@ -68,7 +68,6 @@ router.post('/', async (req, res) => {
     const newTeam = await Team.create({
       team_name: req.body.team_name,
       game: req.body.game,
-      num_pokemon: req.body.num_pokemon,
       user_id: req.session.userId,
       pokemon_ids: req.body.pokemon_ids
     });
@@ -85,7 +84,6 @@ router.put('/:id', async (req, res) => {
   try {
     const updatedTeam = await Team.update({
       team_name: req.body.team_name,
-      num_pokemon: req.body.num_pokemon,
       pokemon_ids: req.body.pokemon_ids
     });
 

@@ -17,7 +17,6 @@ const seedDatabase = async () => {
   await Team.create({
     ...teamData[0],
     user_id: 1,
-    pokemon_ids: "[1, 2]"
   });
 
   for (let i = 0; i < 2; i++) {
@@ -30,7 +29,6 @@ const seedDatabase = async () => {
   await Team.create({
     ...teamData[1],
     user_id: 3,
-    pokemon_ids: "[3, 4]"
   });
 
   for (let i = 2; i < 4; i++) {
@@ -41,15 +39,10 @@ const seedDatabase = async () => {
   }
 
   for (let i = 2; i < teamData.length; i++) {
-    const pokemonIds = [];
-    for (let j = 0; j < 6; j++) {
-      pokemonIds.push(5 + 6 * (i - 2) + j);
-    }
     await Team.create({
       ...teamData[i],
       user_id: 2,
-      pokemon_ids: JSON.stringify(pokemonIds)
-    })
+    });
   }
 
   let addedPokemon = 0;

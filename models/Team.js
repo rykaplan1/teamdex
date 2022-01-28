@@ -31,10 +31,6 @@ Team.init(
         key: 'id',
         unique: false
       }
-    },
-    pokemon_ids: {
-      type: DataTypes.STRING,
-      allowNull: false
     }
   },
   {

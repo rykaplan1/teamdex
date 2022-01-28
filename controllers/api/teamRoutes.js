@@ -39,9 +39,9 @@ router.get('/:id', async (req, res) => {
 
 // GET for team by logged in user
 // TODO: Add withAuth after testing with insomnia
-router.get('/my_teams/', async (req, res) => {
+router.get('/my_teams/:id', async (req, res) => {
   try {
-    const dbTeamData = await Team.findOne({ where: { user_id: req.session.userId } }, { include: { model: Pokemon } });
+    const dbTeamData = await Team.findAll({ where: { user_id: req.params.id }, include: { model: Pokemon } });
     const teams = dbTeamData.map(team => team.get({ plain: true }));
 
     if (!teams) {

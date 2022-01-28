@@ -38,15 +38,10 @@ router.get('/:id', async (req, res) => {
 });
 
 // GET for team by logged in user
-// route for testing in insomnia
+// TODO: Add withAuth after testing with insomnia
 router.get('/my_teams', async (req, res) => {
-  // route for deployment
-  // router.get('/my_teams', async (req, res) => {
   try {
-    // variable for testing insomnia
     const dbTeamData = await Team.findAll([{ where: { user_id: req.session.userId } }, { model: Pokemon }]);
-    // variable for deployment
-    // const dbTeamData = await Team.findAll([{ where: { user_id: req.session.userId } }, { model: Pokemon }]);
     const teams = dbTeamData.map(team => team.get({ plain: true }));
 
     if (!teams) {
@@ -108,6 +103,7 @@ router.put('/:id', async (req, res) => {
 });
 
 // DELETE for removing a team
+// TODO: Add withAuth after testing with insomnia
 router.delete('/:id', async (req, res) => {
   try {
     const team = await Team.destroy({

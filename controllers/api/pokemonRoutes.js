@@ -80,7 +80,30 @@ router.put('/:id', async (req, res) => {
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
-  }
-})
+  };
+});
+
+// Delete pokemon
+router.delete('/:id', async (req, res) => {
+  try {
+    const pokemon = await Pokemon.destroy({
+      where: {
+        id: req.params.id,
+
+        // TODO: Commented out for testing, uncomment for final testing and deployment
+        // user_id: req.session.user_id,
+      }
+    });
+
+    if (!pokemon) {
+      res.status(404).json({ message: 'No pokemon found with this id!' });
+      return;
+    };
+
+    res.status(200).json(pokemon);
+  } catch (err) {
+    res.status(500).json(err);
+  };
+});
 
 module.exports = router;

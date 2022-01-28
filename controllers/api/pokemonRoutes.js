@@ -26,7 +26,7 @@ router.get('/:id', async (req, res) => {
     const pokemon = dbPokemonData.get({ plain: true });
 
     if (!pokemon) {
-      res.status(404).json({ message: 'No pokemon found in with this id!' });
+      res.status(404).json({ message: 'No pokemon found with this id!' });
       return;
     };
 
@@ -38,12 +38,75 @@ router.get('/:id', async (req, res) => {
 });
 
 // Add pokemon
+// TODO: Add withAuth after testing with insomnia
 router.post('/', async (req, res) => {
   try {
-    const newPokemon = await Pokemon.create()
-  } catch (err) {
+    const newPokemon = await Pokemon.create({
+      pokemon_name: req.body.pokemon_name,
+      type_1: req.body.type_1,
+      type_2: req.body.type_2,
+      team_id: req.body.team_id,
+      sprite: req.body.sprite
+    });
 
-  }
-})
+    res.status(200).json(newPokemon);
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  };
+});
+
+// Edit pokemon
+// TODO: Add withAuth after testing with insomnia
+router.put('/:id', async (req, res) => {
+  try {
+    const updatedPokemon = await Pokemon.update({
+      pokemon_name: req.body.pokemon_name,
+      type_1: req.body.type_1,
+      type_2: req.body.type_2
+    },
+    {
+      where: {
+        id: req.params.id,
+
+        // TODO: Commented out for testing, uncomment for final testing and deployment
+        // user_id: req.session.user_id
+      }
+    });
+
+    if (!updatedPokemon) {
+      res.status(404).json({ message: 'No pokemon found with this id!' });
+      return;
+    };
+    res.status(200).json(updatedPokemon);
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  };
+});
+
+// Delete pokemon
+// TODO: Add withAuth after testing with insomnia
+router.delete('/:id', async (req, res) => {
+  try {
+    const pokemon = await Pokemon.destroy({
+      where: {
+        id: req.params.id,
+
+        // TODO: Commented out for testing, uncomment for final testing and deployment
+        // user_id: req.session.user_id,
+      }
+    });
+
+    if (!pokemon) {
+      res.status(404).json({ message: 'No pokemon found with this id!' });
+      return;
+    };
+
+    res.status(200).json(pokemon);
+  } catch (err) {
+    res.status(500).json(err);
+  };
+});
 
 module.exports = router;

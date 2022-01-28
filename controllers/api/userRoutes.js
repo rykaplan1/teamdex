@@ -7,7 +7,7 @@ router.post('/', async (req, res) => {
     const dbUserData = await User.create({
       username: req.body.username,
       email: req.body.email,
-      password: req.body.password,
+      password: req.body.password
     });
 
     req.session.save(() => {
@@ -29,7 +29,7 @@ router.post('/login', async (req, res) => {
     const dbUserData = await User.findOne({
       where: {
         email: req.body.email,
-      },
+      }
     });
 
     if (!dbUserData) {
@@ -37,7 +37,7 @@ router.post('/login', async (req, res) => {
         .status(400)
         .json({ message: 'Incorrect email or password. Please try again!' });
       return;
-    }
+    };
 
     const validPassword = dbUserData.checkPassword(req.body.password);
 
@@ -46,7 +46,7 @@ router.post('/login', async (req, res) => {
         .status(400)
         .json({ message: 'Incorrect email or password. Please try again!' });
       return;
-    }
+    };
 
     req.session.save(() => {
       req.session.userId = dbUserData.id;
@@ -60,7 +60,7 @@ router.post('/login', async (req, res) => {
     });
   } catch (err) {
     res.status(500).json(err);
-  }
+  };
 });
 
 // Logout
@@ -71,7 +71,7 @@ router.post('/logout', (req, res) => {
     });
   } else {
     res.status(404).end();
-  }
+  };
 });
 
 module.exports = router;

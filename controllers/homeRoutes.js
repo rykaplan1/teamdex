@@ -57,7 +57,7 @@ router.get('/top-team/:id', async (req, res) => {
 router.get('/new-team', async (req, res) => {
   const { game } = req.body;
   
-  res.render('newteam', {
+  res.render('createteam', {
     game,
     logged_in: true
   });

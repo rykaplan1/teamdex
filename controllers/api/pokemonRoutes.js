@@ -4,7 +4,7 @@ const { User, Team, Pokemon } = require('../../models');
 // GET for all pokemon logged into teams
 router.get('/', async (req, res) => {
   try {
-    const dbPokemonData = await Pokemon.findAll({ include: [{ model: Team }, { model: User, attributes: { exclude: 'password' } }] });
+    const dbPokemonData = await Pokemon.findAll({ include: { model: Team, include: { model: User, attributes: { exclude: 'password' } } } });
     const pokemon = dbPokemonData.map(pokemon => pokemon.get({ plain: true }));
 
     if (!pokemon) {
@@ -22,7 +22,7 @@ router.get('/', async (req, res) => {
 // GET for pokemon by id
 router.get('/:id', async (req, res) => {
   try {
-    const dbPokemonData = await Pokemon.findByPk(req.params.id, { include: [{ model: Team }, { model: User, attributes: { exclude: 'password' } }] });
+    const dbPokemonData = await Pokemon.findByPk(req.params.id, { include: { model: Team, include: { model: User, attributes: { exclude: 'password' } } } });
     const pokemon = dbPokemonData.get({ plain: true });
 
     if (!pokemon) {
@@ -61,23 +61,24 @@ router.post('/', async (req, res) => {
 router.put('/:id', async (req, res) => {
   try {
     const updatedPokemon = await Pokemon.update({
-      pokemon_name: req.body.pokemon_name,
       type_1: req.body.type_1,
       type_2: req.body.type_2
     },
-    {
-      where: {
-        id: req.params.id,
+      {
+        where: {
+          id: req.params.id,
 
-        // TODO: Commented out for testing, uncomment for final testing and deployment
-        // user_id: req.session.user_id
+          // TODO: Commented out for testing, uncomment for final testing and deployment
+          // user_id: req.session.user_id
+        }
       }
-    });
+    );
 
     if (!updatedPokemon) {
       res.status(404).json({ message: 'No pokemon found with this id!' });
       return;
     };
+
     res.status(200).json(updatedPokemon);
   } catch (err) {
     console.log(err);

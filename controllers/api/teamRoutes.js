@@ -85,7 +85,7 @@ router.put('/:id', async (req, res) => {
     const updatedTeam = await Team.update({
       team_name: req.body.team_name,
       pokemon_ids: req.body.pokemon_ids
-    });
+    }, { where: { id: req.params.id } });
 
     if (!updatedTeam) {
       res.status(404).json({ message: 'No team found with this id!' });

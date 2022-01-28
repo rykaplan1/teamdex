@@ -28,16 +28,37 @@ router.get('/', async (req, res) => {
   }
 });
 
+// GET page for specific top 10 team
+router.get('/top-team/:id', async (req, res) => {
+  try {
+    const teamData = await Team.findByPk(req.params.id, { include: [{ model: User, attributes: { exclude: 'password' } }, { model: Pokemon }] });
+    const team = teamData.get({ plain: true });
+
+    if (!team) {
+      res.status(404).json({ message: 'No team found with this id!' });
+      return;
+    };
+
+    res.render('userteam', {
+      ...team,
+      logged_in: req.session.loggedIn
+    });
+
+  } catch (err) {
+    res.status(500).json(err);
+  }
+})
+
 // GET Dashboard if logged in
 router.get('/dashboard', withAuth, async (req, res) => {
   try {
     const userTeamData = await Team.findAll([{
        where: { user_id: req.session.userId } }, { model: Pokemon }]);
 
-    const user = userData.get({ plain: true });
+    const userTeams = userTeamData.get({ plain: true });
 
     res.render('/dashboard', {
-      ...user,
+      ...userTeams,
       logged_in: true
     });
   } catch (err) {
@@ -56,3 +77,16 @@ router.get('/login', (req, res) => {
 })
 
 module.exports = router;
+
+// GET Signup Page
+router.get('/signup', (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect('/dashboard');
+    return;
+  }
+
+  res.render('/signup');
+})
+
+module.exports = router;
+

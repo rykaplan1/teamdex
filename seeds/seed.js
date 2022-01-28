@@ -46,7 +46,7 @@ const seedDatabase = async () => {
     }
     await Team.create({
       ...teamData[i],
-      user_id: 3,
+      user_id: 2,
       pokemon_ids: JSON.stringify(pokemonIds)
     })
   }

@@ -64,19 +64,21 @@ router.put('/:id', async (req, res) => {
       type_1: req.body.type_1,
       type_2: req.body.type_2
     },
-    {
-      where: {
-        id: req.params.id,
+      {
+        where: {
+          id: req.params.id,
 
-        // TODO: Commented out for testing, uncomment for final testing and deployment
-        // user_id: req.session.user_id
+          // TODO: Commented out for testing, uncomment for final testing and deployment
+          // user_id: req.session.user_id
+        }
       }
-    });
+    );
 
     if (!updatedPokemon) {
       res.status(404).json({ message: 'No pokemon found with this id!' });
       return;
     };
+
     res.status(200).json(updatedPokemon);
   } catch (err) {
     console.log(err);

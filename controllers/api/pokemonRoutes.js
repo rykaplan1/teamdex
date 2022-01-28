@@ -40,9 +40,18 @@ router.get('/:id', async (req, res) => {
 // Add pokemon
 router.post('/', async (req, res) => {
   try {
-    const newPokemon = await Pokemon.create()
-  } catch (err) {
+    const newPokemon = await Pokemon.create({
+      pokemon_name: req.body.pokemon_name,
+      type_1: req.body.type_1,
+      type_2: req.body.type_2,
+      team_id: req.body.team_id,
+      sprite: req.body.sprite
+    });
 
+    res.status(200).json(newPokemon);
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
   }
 })
 

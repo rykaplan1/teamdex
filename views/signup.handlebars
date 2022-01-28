@@ -1,15 +1,21 @@
 <div class='row justify-space-between-md'>
   <form>
   <div class="form-group">
+    <label for="signup-username">Username</label>
+    <input type="text" class="form-control" id="name-signup" aria-describedby="nameHelp" placeholder="Enter a username">
+  </div>
+  <div class="form-group">
     <label for="signup-email">Email address</label>
-    <input type="email" class="form-control" id="input-email1" aria-describedby="emailHelp" placeholder="Enter your email">
+    <input type="email" class="form-control" id="email-signup" aria-describedby="emailHelp" placeholder="Enter your email">
     <small id="emailHelp" class="form-text text-muted">Please enter a valid email to sign up</small>
   </div>
   <div class="form-group">
     <label for="signup-password">Password</label>
-    <input type="password" class="form-control" id="input-password-signup" placeholder="Password">
+    <input type="password" class="form-control" id="password-signup" placeholder="Password">
   </div>
-  <button type="submit" class="btn btn-primary" id="signup-btn">Submit</button>
+  <a href="/login">Already have an account? Log in here</a>
+  <br>
+  <button class="btn btn-primary" id="signup-btn">Submit</button>
 </form>
 
 </div>

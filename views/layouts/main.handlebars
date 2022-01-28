@@ -29,19 +29,22 @@
           <div class="container">
             <div class="row">
               <div class="col-sm-8 col-md-7 py-4">
-                <a class="navbar-brand" href="#">Home</a>
+                <a class="navbar-brand" href="/">Home</a>
                   <button class="navbar-toggler" type="button" data-toggle="collapse"   data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"  aria-expanded="false" aria-label="Toggle navigation">
                       <span class="navbar-toggler-icon"></span>
                   </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
-                      {{#if loggedIn}}
+                      {{#if logged_in}}
                       <li class="nav-item active">  
                         <a class="nav-link" href="/dashboard">Dashboard <span class="sr-only"></span></a>
                       </li>
+                      <li class="nav-item active">  
+                        <div class="nav-link" id="logout">Log Out <span class="sr-only"></span></div>
+                      </li>
                       {{else}}
                       <li class="nav-item active">
-                        <a class="nav-link" href="/login">Please Login <span class="sr-only"></span></a>
+                        <a class="nav-link" href="/login">Please Log In <span class="sr-only"></span></a>
                       </li>
                       {{/if}}
                     </ul>
@@ -66,7 +69,7 @@
         </div>
       </div>
   </main>
-    {{#if loggedIn}}
+    {{#if logged_in}}
     <script src="/js/logout.js"></script>
     {{/if}}
   <footer class="text-muted py-5">

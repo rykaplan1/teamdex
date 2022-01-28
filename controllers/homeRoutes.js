@@ -66,13 +66,15 @@ router.get('/new-team', async (req, res) => {
 // GET Dashboard if logged in
 router.get('/dashboard', withAuth, async (req, res) => {
   try {
-    const userTeamData = await Team.findAll([{
-       where: { user_id: req.session.userId } }, { model: Pokemon }]);
+    const userTeamData = await Team.findAll({
+       include: [{ model: Pokemon }],
+       where: { user_id: req.session.userId } 
+    });
 
-    const userTeams = userTeamData.get({ plain: true });
+    const userTeams = userTeamData.map((team) => team.get({ plain: true }));
 
     res.render('dashboard', {
-      ...userTeams,
+      userTeams,
       logged_in: true
     });
   } catch (err) {

@@ -38,6 +38,7 @@ router.get('/:id', async (req, res) => {
 });
 
 // Add pokemon
+// TODO: Add withAuth after testing with insomnia
 router.post('/', async (req, res) => {
   try {
     const newPokemon = await Pokemon.create({
@@ -56,6 +57,7 @@ router.post('/', async (req, res) => {
 });
 
 // Edit pokemon
+// TODO: Add withAuth after testing with insomnia
 router.put('/:id', async (req, res) => {
   try {
     const updatedPokemon = await Pokemon.update({
@@ -84,6 +86,7 @@ router.put('/:id', async (req, res) => {
 });
 
 // Delete pokemon
+// TODO: Add withAuth after testing with insomnia
 router.delete('/:id', async (req, res) => {
   try {
     const pokemon = await Pokemon.destroy({

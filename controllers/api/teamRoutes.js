@@ -63,8 +63,7 @@ router.post('/', async (req, res) => {
     const newTeam = await Team.create({
       team_name: req.body.team_name,
       game: req.body.game,
-      user_id: req.session.userId,
-      pokemon_ids: req.body.pokemon_ids
+      user_id: req.session.userId
     });
     res.status(200).json(newTeam);
   } catch (err) {
@@ -78,8 +77,7 @@ router.post('/', async (req, res) => {
 router.put('/:id', async (req, res) => {
   try {
     const updatedTeam = await Team.update({
-      team_name: req.body.team_name,
-      pokemon_ids: req.body.pokemon_ids
+      team_name: req.body.team_name
     },
     {
       where: {

@@ -33,8 +33,13 @@ Team.init(
       }
     },
     pokemon_ids: {
-      type: DataTypes.STRING,
-      allowNull: false
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'pokemon',
+        key: 'id',
+        unique: false
+      }
     }
   },
   {

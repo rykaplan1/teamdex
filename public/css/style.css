@@ -1,0 +1,81 @@
+#logout:hover {
+  cursor: pointer;
+}
+
+#type-1, #type-2 {
+  border-radius: 5px;
+  padding: 10px;
+  color: white;
+}
+
+.Normal {
+  background-color: gray;
+}
+
+.Fire {
+  background-color: orangered;
+}
+
+.Water{
+  background-color: blue;
+}
+
+.Electric {
+  background-color: gold;
+}
+
+.Grass {
+  background-color: green;
+}
+
+.Ice {
+  background-color: lightblue;
+}
+
+.Fighting {
+  background-color: darkred;
+}
+
+.Poison {
+  background-color: purple;
+}
+
+.Ground {
+  background-color: rgb(117, 79, 21);
+}
+
+.Flying {
+  background-color: skyblue;
+}
+
+.Psychic {
+  background-color: magenta;
+}
+
+.Bug {
+  background-color: rgb(125, 173, 70);
+}
+
+.Rock {
+  background-color: rgb(185, 146, 111);
+}
+
+.Ghost {
+  background-color: rgba(58, 3, 58, 0.404);
+}
+
+.Dragon {
+  background-color: rgb(62, 7, 126);
+}
+
+.Dark {
+  background-color: rgb(41, 33, 29);
+}
+
+.Steel {
+  background-color: silver;
+}
+
+.Fairy {
+  background-color: rgb(223, 146, 159);
+}

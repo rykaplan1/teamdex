@@ -1,63 +1,18 @@
 <div class="col">
-
+  <h3>Your teams:</h3>
+  {{#each userTeams as |team|}}
+  <h4>{{team.team_name}} <a href="#" class="btn btn-primary edit-button">Edit Team</a></h4>
+  {{#each team.pokemons as |pokemon|}}
   <div class="card" style="width: 18rem;">
-    <img class="card-img-top" src="..." alt="Card image cap">
+    <img class="card-img-top" src="{{pokemon.sprite}}" alt="{{pokemon.pokemon_name}}">
     <div class="card-body">
-      <h5 class="card-title" id="pokemon-name">{{pokemon_name}}</h5>
-      <p class="card-text" id="type-1">{{type_1}}</p>
-      <p class="card-text" id="type-2">{{type_2}}</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+      <h5 class="card-title" id="pokemon-name">{{pokemon.pokemon_name}}</h5>
+      <span class="card-text {{format_type pokemon.type_1}}" id="type-1">{{format_type pokemon.type_1}}</span>
+      {{#if pokemon.type_2}}
+      <span class="card-text {{format_type pokemon.type_2}}" id="type-2">{{format_type pokemon.type_2}}</span>
+      {{/if}}
     </div>
   </div>
-
-  <div class="card" style="width: 18rem;">
-    <img class="card-img-top" src="..." alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title" id="pokemon-name">{{pokemon_name}}</h5>
-      <p class="card-text" id="type-1">{{type_1}}</p>
-      <p class="card-text" id="type-2">{{type_2}}</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-  </div>
-
-  <div class="card" style="width: 18rem;">
-    <img class="card-img-top" src="..." alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title" id="pokemon-name">{{pokemon_name}}</h5>
-      <p class="card-text" id="type-1">{{type_1}}</p>
-      <p class="card-text" id="type-2">{{type_2}}</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-  </div>
-
-  <div class="card" style="width: 18rem;">
-    <img class="card-img-top" src="..." alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title" id="pokemon-name">{{pokemon_name}}</h5>
-      <p class="card-text" id="type-1">{{type_1}}</p>
-      <p class="card-text" id="type-2">{{type_2}}</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-  </div>
-
-  <div class="card" style="width: 18rem;">
-    <img class="card-img-top" src="..." alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title" id="pokemon-name">{{pokemon_name}}</h5>
-      <p class="card-text" id="type-1">{{type_1}}</p>
-      <p class="card-text" id="type-2">{{type_2}}</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-  </div>
-
-  <div class="card" style="width: 18rem;">
-    <img class="card-img-top" src="..." alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title" id="pokemon-name">{{pokemon_name}}</h5>
-      <p class="card-text" id="type-1">{{type_1}}</p>
-      <p class="card-text" id="type-2">{{type_2}}</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-  </div>
-          
+  {{/each}}
+  {{/each}}
 </div>

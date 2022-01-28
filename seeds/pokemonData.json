@@ -1,238 +1,290 @@
 [
   {
     "pokemon_name": "Psyduck",
-    "type_1": "water"
+    "type_1": "water",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/54.png"
   },
   {
     "pokemon_name": "Starmie",
     "type_1": "water",
-    "type_2": "psychic"
+    "type_2": "psychic",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/121.png"
   },
   {
     "pokemon_name": "Geodude",
     "type_1": "rock",
-    "type_2": "ground"
+    "type_2": "ground",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/74.png"
   },
   {
     "pokemon_name": "Onix",
     "type_1": "rock",
-    "type_2": "ground"
+    "type_2": "ground",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/95.png"
   },
   {
     "pokemon_name": "Pikachu",
-    "type_1": "electric"
+    "type_1": "electric",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"
   },
   {
     "pokemon_name": "Squirtle",
-    "type_1": "water"
+    "type_1": "water",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png"
   },
   {
     "pokemon_name": "Bulbasaur",
     "type_1": "grass",
-    "type_2": "poison"
+    "type_2": "poison",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"
   },
   {
     "pokemon_name": "Charizard",
     "type_1": "fire",
-    "type_2": "flying"
+    "type_2": "flying",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png"
   },
   {
     "pokemon_name": "Pidgeotto",
     "type_1": "normal",
-    "type_2": "flying"
+    "type_2": "flying",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/17.png"
   },
   {
     "pokemon_name": "Butterfree",
     "type_1": "bug",
-    "type_2": "flying"
+    "type_2": "flying",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/12.png"
   },
   {
     "pokemon_name": "Pikachu",
-    "type_1": "electric"
+    "type_1": "electric",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"
   },
   {
     "pokemon_name": "Cyndaquil",
-    "type_1": "fire"
+    "type_1": "fire",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/155.png"
   },
   {
     "pokemon_name": "Totodile",
-    "type_1": "water"
+    "type_1": "water",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/158.png"
   },
   {
     "pokemon_name": "Bayleef",
-    "type_1": "grass"
+    "type_1": "grass",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/153.png"
   },
   {
     "pokemon_name": "Noctowl",
     "type_1": "normal",
-    "type_2": "flying"
+    "type_2": "flying",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/164.png"
   },
   {
     "pokemon_name": "Donphan",
-    "type_1": "ground"
+    "type_1": "ground",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/232.png"
   },
   {
     "pokemon_name": "Pikachu",
-    "type_1": "electric"
+    "type_1": "electric",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"
   },
   {
     "pokemon_name": "Swellow",
     "type_1": "normal",
-    "type_2": "flying"
+    "type_2": "flying",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/277.png"
   },
   {
     "pokemon_name": "Grovyle",
-    "type_1": "grass"
+    "type_1": "grass",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/253.png"
   },
   {
     "pokemon_name": "Corphish",
-    "type_1": "water"
+    "type_1": "water",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/341.png"
   },
   {
     "pokemon_name": "Torkoal",
-    "type_1": "fire"
+    "type_1": "fire",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/324.png"
   },
   {
     "pokemon_name": "Glalie",
-    "type_1": "ice"
+    "type_1": "ice",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/362.png"
   },
   {
     "pokemon_name": "Pikachu",
-    "type_1": "electric"
+    "type_1": "electric",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"
   },
   {
     "pokemon_name": "Staraptor",
     "type_1": "normal",
-    "type_2": "flying"
+    "type_2": "flying",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/398.png"
   },
   {
     "pokemon_name": "Infernape",
     "type_1": "fire",
-    "type_2": "fighting"
+    "type_2": "fighting",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/392.png"
   },
   {
     "pokemon_name": "Torterra",
     "type_1": "grass",
-    "type_2": "ground"
+    "type_2": "ground",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/389.png"
   },
   {
     "pokemon_name": "Buizel",
-    "type_1": "water"
+    "type_1": "water",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/418.png"
   },
   {
     "pokemon_name": "Gible",
     "type_1": "dragon",
-    "type_2": "ground"
+    "type_2": "ground",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/443.png"
   },
   {
     "pokemon_name": "Pikachu",
-    "type_1": "electric"
+    "type_1": "electric",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"
   },
   {
     "pokemon_name": "Pignite",
     "type_1": "fire",
-    "type_2": "fighting"
+    "type_2": "fighting",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/499.png"
   },
   {
     "pokemon_name": "Leavanny",
     "type_1": "bug",
-    "type_2": "grass"
+    "type_2": "grass",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/542.png"
   },
   {
     "pokemon_name": "Palpitoad",
     "type_1": "water",
-    "type_2": "ground"
+    "type_2": "ground",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/536.png"
   },
   {
     "pokemon_name": "Unfezant",
     "type_1": "normal",
-    "type_2": "flying"
+    "type_2": "flying",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/521.png"
   },
   {
     "pokemon_name": "Boldore",
-    "type_1": "rock"
+    "type_1": "rock",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/525.png"
   },
   {
     "pokemon_name": "Pikachu",
-    "type_1": "electric"
+    "type_1": "electric",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"
   },
   {
     "pokemon_name": "Talonflame",
     "type_1": "fire",
-    "type_2": "flying"
+    "type_2": "flying",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/663.png"
   },
   {
     "pokemon_name": "Greninja",
     "type_1": "water",
-    "type_2": "dark"
+    "type_2": "dark",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/658.png"
   },
   {
     "pokemon_name": "Goodra",
-    "type_1": "dragon"
+    "type_1": "dragon",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/706.png"
   },
   {
     "pokemon_name": "Noivern",
     "type_1": "flying",
-    "type_2": "dragon"
+    "type_2": "dragon",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/715.png"
   },
   {
     "pokemon_name": "Hawlucha",
     "type_1": "fighting",
-    "type_2": "flying"
+    "type_2": "flying",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/701.png"
   },
   {
     "pokemon_name": "Pikachu",
-    "type_1": "electric"
+    "type_1": "electric",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"
   },
   {
     "pokemon_name": "Rowlet",
     "type_1": "grass",
-    "type_2": "flying"
+    "type_2": "flying",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/722.png"
   },
   {
     "pokemon_name": "Incineroar",
     "type_1": "fire",
-    "type_2": "dark"
+    "type_2": "dark",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/727.png"
   },
   {
     "pokemon_name": "Lycanroc",
-    "type_1": "rock"
+    "type_1": "rock",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10152.png"
   },
   {
     "pokemon_name": "Melmetal",
-    "type_1": "steel"
+    "type_1": "steel",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/809.png"
   },
   {
     "pokemon_name": "Naganadel",
     "type_1": "Poison",
-    "type_2": "Dragon"
+    "type_2": "Dragon",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/804.png"
   },
   {
     "pokemon_name": "Pikachu",
-    "type_1": "electric"
+    "type_1": "electric",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"
   },
   {
     "pokemon_name": "Dragonite",
     "type_1": "Dragon",
-    "type_2": "Flying"
+    "type_2": "Flying",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/149.png"
   },
   {
     "pokemon_name": "Gengar",
     "type_1": "Ghost",
-    "type_2": "Poison"
+    "type_2": "Poison",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/94.png"
   },
   {
     "pokemon_name": "Lucario",
     "type_1": "Fighting",
-    "type_2": "Steel"
+    "type_2": "Steel",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/448.png"
   },
   {
     "pokemon_name": "Galarian Farfetch'd",
-    "type_1": "Fighting"
+    "type_1": "Fighting",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10163.png"
   },
   {
     "pokemon_name": "Dracovish",
     "type_1": "Water",
-    "type_2": "Dragon"
+    "type_2": "Dragon",
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/882.png"
   }
 ]

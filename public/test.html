@@ -22,7 +22,7 @@
       }
     }
   </style>
-  <link rel='stylesheet' href='/css/style.css' />
+  <link rel='stylesheet' href='./css/style.css' />
 </head>
 
 <body>
@@ -39,51 +39,35 @@
               </button>
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-                  {{#if loggedIn}}
                   <li class="nav-item active">
-                    <a class="nav-link" href="/dashboard">Dashboard <span class="sr-only"></span></a>
+                    <a class="nav-link" href="/dashboard">Dashboard <span class="sr-only"> (current)</span></a>
                   </li>
-                  {{else}}
                   <li class="nav-item active">
-                    <a class="nav-link" href="/login">Please Login <span class="sr-only"></span></a>
+                    <a class="nav-link" href="/login">Please Login <span class="sr-only">(current) </span></a>
                   </li>
-                  {{/if}}
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
                   <input class="form-control mr-sm-2" type="search" placeholder="Search for Pokemon" aria-label="Search"
                     id="pokemon-search">
-                  <button class="btn btn-outline-success my-2 my-sm-0" id="search-btn" type="submit">Search</button>
+                  <input class="btn btn-outline-success my-2 my-sm-0" id="search-btn" type="submit">Search>
                 </form>
               </div>
             </div>
           </div>
         </div>
       </div>
-      </div>
     </nav>
   </header>
   <main>
-    <h1>Pokemon Team Builder</h1>
+    <h1>TEST MEEEEEEEEEEEEE</h1>
     <div class="album py-5 bg-light">
       <div class="container">
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-          {{{body}}}
         </div>
       </div>
     </div>
   </main>
-  {{#if loggedIn}}
-  <script src="/js/logout.js"></script>
-  {{/if}}
-  <footer class="text-muted py-5">
-    <div class="container">
-      <p class="float-end mb-1">
-        <a href="#">Back to top</a>
-      </p>
-      <p class="mb-1">Website Built by:</p>
-      <p class="mb-0"></a></p>
-    </div>
-  </footer>
+  <!-- <script src="./js/logout.js"></script> -->
   <script src="./js/searchGeneration.js"></script>
 </body>
 

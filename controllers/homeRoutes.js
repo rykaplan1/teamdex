@@ -47,7 +47,17 @@ router.get('/top-team/:id', async (req, res) => {
   } catch (err) {
     res.status(500).json(err);
   }
-})
+});
+
+// GET team creation page
+router.get('/new-team', async (req, res) => {
+  const { game } = req.body;
+  
+  res.render('newteam', {
+    game,
+    logged_in: true
+  });
+});
 
 // GET Dashboard if logged in
 router.get('/dashboard', withAuth, async (req, res) => {
@@ -61,6 +71,21 @@ router.get('/dashboard', withAuth, async (req, res) => {
       ...userTeams,
       logged_in: true
     });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+// GET specific team from dashboard
+router.get('/dashboard/team/:id', async (req, res) => {
+  try {
+    const teamData = await Team.findByPk(req.params.id, { include: [{ model: User, attributes: { exclude: 'password' } }, { model: Pokemon }] });
+    const team = teamData.get({ plain: true });
+  
+    res.render('/userteam', {
+      ...team,
+      logged_in: true
+    })
   } catch (err) {
     res.status(500).json(err);
   }

@@ -1,9 +1,9 @@
 // Takes the user's input for which generation they want to pull from
 const searchInput = document.getElementById('pokemon-search'); // Drop down list for generations
 const searchBtn = document.getElementById('search-btn'); // Search/submit button for searching a generation
+// TODO get element of datalist for populating later
+const dataList = document.getElementById('pokemon-list');
 const main = document.querySelector('main');
-// const pokeSearch = require('pokemon.js');
-// pokeSearch.setLanguage('english');
 
 // Search for all pokemon from a generation
 const searchGeneration = async (num) => {
@@ -21,20 +21,15 @@ const searchGeneration = async (num) => {
     return pokemonArr;
 }
 
-// TODO Generate list of pokemon to the page
+// Generate list of pokemon to the page
 const displayPokemonBulk = async function (pokemon) {
-    // create drop down list of pokemon names
-    const inputField = document.createElement('input');
-    inputField.setAttribute('list','pokemon-list');
-    const inputList = document.createElement('datalist');
-    inputList.setAttribute('id', 'pokemon-list');
+    // create drop down list of pokemon names // TODO append to existing form/input elements
+    // Create and append one pokemon to the list
     pokemon.forEach(pokeName => {
         const listEntry = document.createElement('option');
         listEntry.value = pokeName.name;
-        inputList.append(listEntry);
+        dataList.append(listEntry);
     })
-    main.append(inputField);
-    main.append(inputList);
     // each element includes name, (is a) button to go to detailed page for that pokemon, ?Generation added?-stretch goal
     console.log(pokemon);
 }

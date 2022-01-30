@@ -1,7 +1,6 @@
-// Takes the user's input for which generation they want to pull from
-const searchInput = document.getElementById('pokemon-search'); // Drop down list for generations
-const searchBtn = document.getElementById('search-btn'); // Search/submit button for searching a generation
+// List of pokemon
 const dataList = document.getElementById('pokemon-list');
+// List of games
 const gameList = document.getElementById('game-list');
 
 const gameListData = [
@@ -93,6 +92,10 @@ const searchGeneration = async (num) => {
 
 // Generate list of pokemon to the page
 const displayPokemonBulk = async function (pokemon) {
+    // Remove previous list data
+    while (dataList.firstChild) {
+        dataList.removeChild(dataList.firstChild);
+    }
     // Create and append pokemon to the list
     pokemon.forEach(pokeName => {
         const listEntry = document.createElement('option');
@@ -113,21 +116,9 @@ const generateGamesList = function () {
     });
 }
 
-// when 'search' is clicked search a generation and display the pokemon availible to that generation to the page in a scroll-able section
-searchBtn.addEventListener('click', async (event) => {
-    event.preventDefault();
-    // take user input to search for pokemon in a certain generation
-    const pokeArr = await searchGeneration(searchInput.value);
-    displayPokemonBulk(pokeArr);
-});
-
 // When a new game is selected, update the list of available pokemon
 gameList.addEventListener('input', async (event) => {
     event.preventDefault();
-    console.log(dataList.children);
-    while (dataList.firstChild) {
-        dataList.removeChild(dataList.firstChild);
-    }
     const pokeArr = await searchGeneration(gameList.value);
     displayPokemonBulk(pokeArr);
 })

@@ -38,12 +38,22 @@
       </div>
     </div>
   </section>
-  <section>
+  <section class="container">
+    <select class="form-select-lg" aria-label="Default select example">
+      <option selected>Choose a Game:</option>
+      {{#each team.game}}
+      <option value={{this}}>{{this.team.game}}</option>
+      {{/each}}
+    </select>
+    </div>
+
+    <div class="row">
     <label>Choose a pokemon:</label>
-    <input list="pokemon-list" id="pokemon-choice" />
+    <input list="pokemon-list" id="pokemon-choice"/>
     <datalist id="pokemon-list">
 
     </datalist>
+    </div>
     <button
       type="submit"
       id="add-pokemon-btn"

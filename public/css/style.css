@@ -96,7 +96,7 @@ h1 {
 /* Header Parallax Element Style*/ 
 .parallax {
   background-image: url(./pokeball.jpg);
-  height: 80%;
+  height: 55%;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;

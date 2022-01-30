@@ -1,9 +1,9 @@
-<div class="container col-sm-6">
+<div class="container">
   <h3>Here are the current Top Ten Teams</h1>
   <br>
-  <div class="container colsm-6">
+  <div class="row">
   {{#each topTenTeams as |team|}}
-  <div class="card" style="width: 18rem;">
+  <div class="card col-sm-12" style="width: 18rem;">
     <div class="row justify-content-left">
       {{#each team.pokemons as |pokemon|}}
       <img class="card-img-top col" src={{pokemon.sprite}} alt={{pokemon.pokemon_name}}/>

@@ -39,11 +39,9 @@
     </div>
   </section>
   <section class="container">
-    <select class="form-select-lg" aria-label="Default select example">
-      <option selected>Choose a Game:</option>
-      {{#each team.game}}
-      <option value={{this}}>{{this.team.game}}</option>
-      {{/each}}
+    <label>Choose a Game:</label>
+    <select id="game-list" class="form-select-lg" aria-label="Default select example">
+
     </select>
     </div>
 
@@ -59,8 +57,7 @@
       id="add-pokemon-btn"
       class="btn btn-outline-primary mb-2"
     >Add Pokemon</button>
-    <button type="submit" id="add-team-btn" class="btn btn-primary mb-2">Add to
-      Team</button>
+    <button id="save-new-team" class="btn btn-outline-success mb-2">Save Team</button>
   </section>
 </div>
 <script src="/js/searchPokemon.js"></script>

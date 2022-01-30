@@ -1,47 +1,66 @@
 <div>
   <section>
-    <input type="text" placeholder="New Team Name"></input>
-    <div id="new-team-display" class="container">
-      <div class="card" style="width: 18rem;">
-        <h5 class="card-title">Pokemon 1</h5>
-        <p class="card-text"></p>
-        <img>
-      </div>
-      <div class="card" style="width: 18rem;">
-        <h5 class="card-title">Pokemon 2</h5>
-        <p class="card-text"></p>
-        <img>
-      </div>
-      <div class="card" style="width: 18rem;">
-        <h5 class="card-title">Pokemon 3</h5>
-        <p class="card-text"></p>
-        <img>
-      </div>
-      <div class="card" style="width: 18rem;">
-        <h5 class="card-title">Pokemon 4</h5>
-        <p class="card-text"></p>
-        <img>
-      </div>
-      <div class="card" style="width: 18rem;">
-        <h5 class="card-title">Pokemon 5</h5>
-        <p class="card-text"></p>
-        <img>
-      </div>
-      <div class="card" style="width: 18rem;">
-        <h5 class="card-title">Pokemon 6</h5>
-        <p class="card-text"></p>
-        <img>
+    <div class="">
+      <div class="">
+        <h1>New Pokemon Team</h1>
+        <div id="new-team-display" class="row">
+          <div class="card col-sm-6" style="width: 18rem;">
+            <h5 class="card-title">Pokemon 1</h5>
+            <p class="card-text"></p>
+            <img />
+          </div>
+          <div class="card col-sm-6" style="width: 18rem;">
+            <h5 class="card-title">Pokemon 2</h5>
+            <p class="card-text"></p>
+            <img />
+          </div>
+          <div class="card col-sm-6" style="width: 18rem;">
+            <h5 class="card-title">Pokemon 3</h5>
+            <p class="card-text"></p>
+            <img />
+          </div>
+          <div class="card col-sm-6" style="width: 18rem;">
+            <h5 class="card-title">Pokemon 4</h5>
+            <p class="card-text"></p>
+            <img />
+          </div>
+          <div class="card col-sm-6" style="width: 18rem;">
+            <h5 class="card-title">Pokemon 5</h5>
+            <p class="card-text"></p>
+            <img />
+          </div>
+          <div class="card col-sm-6" style="width: 18rem;">
+            <h5 class="card-title">Pokemon 6</h5>
+            <p class="card-text"></p>
+            <img />
+          </div>
+        </div>
       </div>
     </div>
   </section>
-  <section>
+  <section class="container">
+    <select class="form-select-lg" aria-label="Default select example">
+      <option selected>Choose a Game:</option>
+      {{#each team.game}}
+      <option value={{this}}>{{this.team.game}}</option>
+      {{/each}}
+    </select>
+    </div>
+
+    <div class="row">
     <label>Choose a pokemon:</label>
-    <input list="pokemon-list" id="pokemon-choice">
+    <input list="pokemon-list" id="pokemon-choice"/>
     <datalist id="pokemon-list">
 
     </datalist>
-    <button type="submit" id="add-pokemon-btn" class="btn btn-primary mb-2">Add Pokemon</button>
-    <button id="save-new-team" class="btn btn-success mb-2">Save Team</button>
+    </div>
+    <button
+      type="submit"
+      id="add-pokemon-btn"
+      class="btn btn-outline-primary mb-2"
+    >Add Pokemon</button>
+    <button type="submit" id="add-team-btn" class="btn btn-primary mb-2">Add to
+      Team</button>
   </section>
 </div>
 <script src="/js/searchPokemon.js"></script>

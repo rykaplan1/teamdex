@@ -2,7 +2,7 @@
 <div class="row">
   <div class="w-50 mx-auto">
     <h3> Create new Team:
-      <a href="/new-team" class="btn btn-primary edit-button" id=" id="create-new-team"">Create Team</a>
+      <a href="/create-team" class="btn btn-primary edit-button" id=" id="create-new-team"">Create Team</a>
     </h3>
   </div>
   <h3>Your teams:</h3>
@@ -13,9 +13,9 @@
     <img class="card-img-top col" src="{{pokemon.sprite}}" alt="{{pokemon.pokemon_name}}">
     <div class="card-body d-flex flex-column">
       <h5 class="card-title" id="pokemon-name">{{pokemon.pokemon_name}}</h5>
-      <span class="card-text {{format_type pokemon.type_1}}" id="type-1">{{format_type pokemon.type_1}}</span>
+      <span class="card-text type-text {{format_type pokemon.type_1}}">{{format_type pokemon.type_1}}</span>
       {{#if pokemon.type_2}}
-      <span class="card-text {{format_type pokemon.type_2}}" id="type-2">{{format_type pokemon.type_2}}</span>
+      <span class="card-text type-text {{format_type pokemon.type_2}}">{{format_type pokemon.type_2}}</span>
       {{/if}}
     </div>
   </div>

@@ -80,3 +80,15 @@
   background-color: rgb(223, 146, 159);
 }
 
+#navbarHeader {
+  display: inline-block;
+}
+
+main {
+  padding-top: 20px;
+  padding-bottom: 25px;
+}
+
+h1 {
+  font-family: 'Miltonian', cursive;
+}

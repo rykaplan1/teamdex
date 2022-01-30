@@ -98,6 +98,7 @@ const displayPokemonBulk = async function (pokemon) {
         const listEntry = document.createElement('option');
         newName = pokeName.name.charAt(0).toUpperCase() + pokeName.name.slice(1);
         listEntry.value = newName;
+        listEntry.innerHTML = newName;
         dataList.append(listEntry);
     })
 }
@@ -107,10 +108,9 @@ const generateGamesList = function () {
     gameListData.forEach(game => {
         const listEntry = document.createElement('option');
         listEntry.innerHTML = game.name;
-        listEntry.setAttribute('data-generation', game.generation);
+        listEntry.setAttribute('value', game.generation);
         gameList.append(listEntry);
     });
-    console.log(gameList);
 }
 
 // when 'search' is clicked search a generation and display the pokemon availible to that generation to the page in a scroll-able section
@@ -120,5 +120,16 @@ searchBtn.addEventListener('click', async (event) => {
     const pokeArr = await searchGeneration(searchInput.value);
     displayPokemonBulk(pokeArr);
 });
+
+// When a new game is selected, update the list of available pokemon
+gameList.addEventListener('input', async (event) => {
+    event.preventDefault();
+    console.log(dataList.children);
+    while (dataList.firstChild) {
+        dataList.removeChild(dataList.firstChild);
+    }
+    const pokeArr = await searchGeneration(gameList.value);
+    displayPokemonBulk(pokeArr);
+})
 
 generateGamesList();

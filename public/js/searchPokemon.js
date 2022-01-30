@@ -1,5 +1,5 @@
 // Loads where the user can click on a specific pokemon from the list created by searchGeneration.js
-const pokeListData = document.getElementById('pokemon-choice');
+const pokeListData = document.getElementById('pokemon-list');
 const addPokemonBtn = document.getElementById('add-pokemon-btn');
 const newTeamDisplay = document.getElementById('new-team-display');
 const saveNewTeamBtn = document.getElementById('save-new-team');
@@ -47,7 +47,6 @@ addPokemonBtn.addEventListener('click', async (event) => {
     } else {
         const pokemonObj = await searchForPokemon(pokeListData.value);
         addToTeam(pokemonObj);
-        console.log(newTeam);
     }
 })
 

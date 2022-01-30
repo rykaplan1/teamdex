@@ -79,3 +79,30 @@
 .Fairy {
   background-color: rgb(223, 146, 159);
 }
+
+#navbarHeader {
+  display: inline-block;
+}
+
+main {
+  padding-top: 20px;
+  padding-bottom: 25px;
+}
+
+h1 {
+  font-family: 'Miltonian', cursive;
+}
+
+/* Header Parallax Element Style*/ 
+.parallax {
+  background-image: url(./pokeball.jpg);
+  height: 80%;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#title-text {
+  padding-top: 150px;
+}

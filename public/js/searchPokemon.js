@@ -2,8 +2,9 @@
 const pokeListData = document.getElementById('pokemon-choice');
 const addPokemonBtn = document.getElementById('add-pokemon-btn');
 const newTeamDisplay = document.getElementById('new-team-display');
+const saveNewTeamBtn = document.getElementById('save-new-team');
 
-let newTeamLength = 0;
+const newTeam = [];
 
 // search PokeAPI for the respective Pokemon
 const searchForPokemon = async function (name) {
@@ -13,7 +14,7 @@ const searchForPokemon = async function (name) {
     return pokeData;
 }
 
-// TODO Add pokemon to team template
+// Add pokemon to team template
 const addToTeam = function (pokeObj) {
     // pull relevent data from pokemon object
     const newPokemon = {
@@ -22,7 +23,7 @@ const addToTeam = function (pokeObj) {
         sprite: pokeObj.sprites.front_default
     }
     // condensing dom traversal
-    const currentTeamSlot = newTeamDisplay.children[newTeamLength];
+    const currentTeamSlot = newTeamDisplay.children[newTeam.length];
     // Pokemon Name
     currentTeamSlot.children[0].innerHTML = newPokemon.name;
     // Description
@@ -34,17 +35,24 @@ const addToTeam = function (pokeObj) {
     // Sprite
     currentTeamSlot.children[2].setAttribute('src', newPokemon.sprite);
     currentTeamSlot.children[2].setAttribute('alt', newPokemon.name);
-    newTeamLength++;
+    newTeam.push(newPokemon);
 }
 
 // on clicking 'add to team' get the value of the datalist dropdown and fetch that pokemon's data, then display it in the team template
 addPokemonBtn.addEventListener('click', async (event) => {
     event.preventDefault();
     // check if team is full
-    if (newTeamLength >= 6) {
+    if (newTeam.length >= 6) {
         alert('Team at capacity, max 6')
     } else {
         const pokemonObj = await searchForPokemon(pokeListData.value);
         addToTeam(pokemonObj);
+        console.log(newTeam);
     }
+})
+
+saveNewTeamBtn.addEventListener('click', (event) => {
+    event.preventDefault();
+    // save current pokemon to database
+
 })

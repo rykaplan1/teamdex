@@ -54,7 +54,7 @@ router.get('/top-team/:id', async (req, res) => {
 });
 
 // GET team creation page
-router.get('/new-team', async (req, res) => {
+router.get('/create-team', async (req, res) => {
   const { game } = req.body;
   
   res.render('createteam', {

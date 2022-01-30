@@ -123,4 +123,11 @@ gameList.addEventListener('input', async (event) => {
     displayPokemonBulk(pokeArr);
 })
 
-generateGamesList();
+// Populate the pokemon list once on page load with the default value of the game list (Red-Blue)
+async function onPageLoad() {
+    generateGamesList();
+    const pokeArr = await searchGeneration(gameList.value);
+    displayPokemonBulk(pokeArr);
+}
+
+onPageLoad();

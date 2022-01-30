@@ -26,15 +26,19 @@ const addToTeam = function (pokeObj) {
     const currentTeamSlot = newTeamDisplay.children[newTeam.length];
     // Pokemon Name
     currentTeamSlot.children[0].innerHTML = newPokemon.name;
-    // Description
-    if (newPokemon.type[1]) {
-        currentTeamSlot.children[1].innerHTML = `Types: ${newPokemon.type[0].type.name}, ${newPokemon.type[1].type.name}`;
-    } else {
-        currentTeamSlot.children[1].innerHTML = `Type: ${newPokemon.type[0].type.name}`;
-    }
+    // Types
+    newPokemon.type.forEach(type => {
+        const typeName = document.createElement('span');
+        typeName.classList.add('card-text');
+        const typeCapitilized = type.type.name.charAt(0).toUpperCase() + type.type.name.slice(1);
+        typeName.classList.add(typeCapitilized);
+        typeName.classList.add('type-text');
+        typeName.innerHTML = typeCapitilized;
+        currentTeamSlot.append(typeName);
+    })
     // Sprite
-    currentTeamSlot.children[2].setAttribute('src', newPokemon.sprite);
-    currentTeamSlot.children[2].setAttribute('alt', newPokemon.name);
+    currentTeamSlot.children[1].setAttribute('src', newPokemon.sprite);
+    currentTeamSlot.children[1].setAttribute('alt', newPokemon.name);
     newTeam.push(newPokemon);
 }
 

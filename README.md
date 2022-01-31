@@ -15,7 +15,6 @@ As a fan of the Pokemon series, I want a tool for finding and storing the info o
 - [Collaborators](#collaborators)
 - [License](#license)
 - [Features](#features)
-- [Tests](#tests)
 
 ## Installation
 - To get the app on your local machine:

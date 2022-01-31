@@ -1,12 +1,13 @@
 <div class="container">
 <div class="row">
-  <div class="w-100 mx-auto text-center">
+  <div class="w-50 mx-auto">
     <h3> Create new Team:
       <a href="/create-team" class="btn btn-primary edit-button" id=" id="create-new-team"">Create Team</a>
     </h3>
   </div>
   <h3>Your teams:</h3>
   {{#each userTeams as |team|}}
+  <h4>{{team.team_name}}</h4>
   {{#each team.pokemons as |pokemon|}}
   <div class="card col-sm-12 m-2" style="width: 18rem;">
     <img class="card-img-top col" src="{{pokemon.sprite}}" alt="{{pokemon.pokemon_name}}">

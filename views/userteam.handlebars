@@ -12,22 +12,19 @@
 </div> --}}
 
 <div class="container">
-  <a href="/top-team/{{id}}"></a>
   <h3>{{team_name}}</h3>
   <br>
   <div class="row">
-  {{#each team.id as |team|}}
   <div class="card col-sm-12 m-2" style="width: 18rem; height: 32rem;">
     <div class="row justify-content-left">
-      {{#each team.pokemons as |pokemon|}}
+      {{#each pokemons as |pokemon|}}
       <img class="card-img-top col mb-3" src={{pokemon.sprite}} alt={{pokemon.pokemon_name}}/>
       {{/each}}
     </div>
     <div class="card-body d-flex flex-column">
-      <h5 class="card-title bottom-team bottom-text">{{team.team_name}}</h5>
-      <p class="card-text bottom-username bottom-text">Created by {{team.user.username}}</p>
+      <h5 class="card-title bottom-team bottom-text2">{{team_name}}</h5>
+      <p class="card-text bottom-username bottom-text">Created by {{user.username}}</p>
     </div>
   </div>
-  {{/each}}
   </div>
 </div>

@@ -36,14 +36,12 @@ As a fan of the Pokemon series, I want a tool for finding and storing the info o
 - If you would like seed data for testing, run the command `npm run seed`.
 
 ## Usage
-The visual shows the app running on a local server.
+The visual shows the app running on a deployed heroku server.
 
-![Team Dex Static Visual](./assets/imageFileNameAndExtensionHere)
-
-Please click [here](linkToVideoHere) for a video demo.
+![Team Dex Static Visual](./assets/teamdex-visual.png)
 
 ## Deployed Link
-*Deployed Heroku link here*
+https://teamdex.herokuapp.com/
 
 ## Collaborators
 Michael Hranek - GitHub: [MHranek](https://github.com/MHranek)
@@ -62,6 +60,3 @@ This application is covered under the MIT license.
 - Create a login that holds user team data
 - Select pokemon for your teams based on the game being played
 - Save created teams to be viewed on the user dashboard
-
-## Tests
-*Write test here*

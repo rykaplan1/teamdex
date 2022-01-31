@@ -58,9 +58,10 @@ Andrew Yoo - GitHub: [andrewbyoo](https://github.com/andrewbyoo)
 This application is covered under the MIT license.
 
 ## Features
-- View and upvote other user's teams
-- Create a login to save your created teams
+- View the 10 most recently made teams
+- Create a login that holds user team data
 - Select pokemon for your teams based on the game being played
+- Save created teams to be viewed on the user dashboard
 
 ## Tests
 *Write test here*

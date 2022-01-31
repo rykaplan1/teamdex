@@ -7,7 +7,6 @@
   </div>
   <h3>Your teams:</h3>
   {{#each userTeams as |team|}}
-  <h4>{{team.team_name}} <a href="#" class="btn btn-primary edit-button">Edit Team</a></h4>
   {{#each team.pokemons as |pokemon|}}
   <div class="card col-sm-12 m-2" style="width: 18rem;">
     <img class="card-img-top col" src="{{pokemon.sprite}}" alt="{{pokemon.pokemon_name}}">

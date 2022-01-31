@@ -111,7 +111,7 @@ const generateGamesList = function () {
     gameListData.forEach(game => {
         const listEntry = document.createElement('option');
         listEntry.innerHTML = game.name;
-        listEntry.setAttribute('value', game.generation);
+        listEntry.setAttribute('data-generation', game.generation);
         gameList.append(listEntry);
     });
 }
@@ -119,14 +119,14 @@ const generateGamesList = function () {
 // When a new game is selected, update the list of available pokemon
 gameList.addEventListener('input', async (event) => {
     event.preventDefault();
-    const pokeArr = await searchGeneration(gameList.value);
+    const pokeArr = await searchGeneration(gameList.options[selectedGame.selectedIndex].getAttribute('data-generation'));
     displayPokemonBulk(pokeArr);
 })
 
 // Populate the pokemon list once on page load with the default value of the game list (Red-Blue)
 async function onPageLoad() {
     generateGamesList();
-    const pokeArr = await searchGeneration(gameList.value);
+    const pokeArr = await searchGeneration(gameList.options[selectedGame.selectedIndex].getAttribute('data-generation'));
     displayPokemonBulk(pokeArr);
 }
 

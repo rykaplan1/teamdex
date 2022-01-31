@@ -3,6 +3,8 @@ const pokeListData = document.getElementById('pokemon-list');
 const addPokemonBtn = document.getElementById('add-pokemon-btn');
 const newTeamDisplay = document.getElementById('new-team-display');
 const saveNewTeamBtn = document.getElementById('save-new-team');
+const newTeamName = document.getElementById('new-team-name');
+const selectedGame = document.getElementById('game-list');
 
 const newTeam = [];
 
@@ -54,8 +56,50 @@ addPokemonBtn.addEventListener('click', async (event) => {
     }
 })
 
-saveNewTeamBtn.addEventListener('click', (event) => {
+saveNewTeamBtn.addEventListener('click', async (event) => {
     event.preventDefault();
     // save current pokemon to database
+    const teamInfo = {
+        team_name: newTeamName.value,
+        game: selectedGame.value
+    };
+    // Post the team to the database (should return the team_ID)
+    const postTeam = await fetch('/api/teams/', {
+        method: 'POST',
+        body: JSON.stringify(teamInfo),
+        headers: { 'Content-Type': 'application/json' },
+    });
+    const parsedTeam = await postTeam.json();
 
+    // Post the pokemon to the database using the returned team_ID
+    newTeam.forEach(pokemon => {
+        let pokemonInfo;
+        if(pokemon.type[1]) {
+            pokemonInfo = {
+                pokemon_name: pokemon.name,
+                type_1: pokemon.type[0].type.name,
+                type_2: pokemon.type[1].type.name,
+                team_id: parsedTeam.id,
+                sprite: pokemon.sprite
+            }
+        } else {
+            pokemonInfo = {
+                pokemon_name: pokemon.name,
+                type_1: pokemon.type[0].type.name,
+                team_id: parsedTeam.id,
+                sprite: pokemon.sprite
+            }
+        }
+        const postPokemon = fetch('/api/pokemon/', {
+            method: 'POST',
+            body: JSON.stringify(pokemonInfo),
+            headers: { 'Content-Type': 'application/json' },
+        });
+    });
+
+    const getNewTeam = await fetch(`/api/teams/${parsedTeam.id}`, {
+        method: 'GET'
+    });
+    const parsedGetNewTeam = await getNewTeam.json();
+    console.log(parsedGetNewTeam);
 })

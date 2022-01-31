@@ -47,16 +47,20 @@ Please click [here](linkToVideoHere) for a video demo.
 
 ## Collaborators
 Michael Hranek - GitHub: [MHranek](https://github.com/MHranek)
+
 Rich Kaplan - GitHub: [rykaplan1](https://github.com/rykaplan1)
+
 Daniel Westiner - GitHub: [DanielWestiner](https://github.com/DanielWestiner)
+
 Andrew Yoo - GitHub: [andrewbyoo](https://github.com/andrewbyoo)
 
 ## License
 This application is covered under the MIT license.
 
 ## Features
-- List features here
-- Feature 2
+- View and upvote other user's teams
+- Create a login to save your created teams
+- Select pokemon for your teams based on the game being played
 
 ## Tests
 *Write test here*

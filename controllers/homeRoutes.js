@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { User, Team, Pokemon } = require('../models');
 const withAuth = require('../utils/auth');
 
-// GET homepage with top 10 teams
+// GET homepage with 10 newest teams
 router.get('/', async (req, res) => {
   try {
     const topTenTeamData = await Team.findAll({
@@ -17,7 +17,7 @@ router.get('/', async (req, res) => {
         }
       ],
       limit: 10,
-      order: [['upvotes', 'DESC']]
+      order: [['created_at', 'DESC']]
     });
 
     const topTenTeams = topTenTeamData.map((team) => team.get({ plain: true }));

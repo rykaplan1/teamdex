@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { User, Team, Pokemon } = require('../../models');
+const withAuth = require('../../utils/auth');
 
 // GET for all teams in db
 router.get('/', async (req, res) => {
@@ -38,8 +39,7 @@ router.get('/:id', async (req, res) => {
 });
 
 // GET for team by logged in user
-// TODO: Add withAuth after testing with insomnia
-router.get('/my_teams/', async (req, res) => {
+router.get('/my_teams/', withAuth, async (req, res) => {
   try {
     const dbTeamData = await Team.findAll({ where: { user_id: req.session.id }, include: { model: Pokemon } });
     const teams = dbTeamData.map(team => team.get({ plain: true }));
@@ -57,8 +57,7 @@ router.get('/my_teams/', async (req, res) => {
 });
 
 // POST for user to add team
-// TODO: Add withAuth after testing with insomnia
-router.post('/', async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
   try {
     const newTeam = await Team.create({
       team_name: req.body.team_name,
@@ -74,8 +73,7 @@ router.post('/', async (req, res) => {
 });
 
 // PUT for updating a team
-// TODO: Add withAuth after testing with insomnia
-router.put('/:id', async (req, res) => {
+router.put('/:id', withAuth, async (req, res) => {
   try {
     const updatedTeam = await Team.update({
       team_name: req.body.team_name
@@ -84,8 +82,7 @@ router.put('/:id', async (req, res) => {
         where: {
           id: req.params.id,
 
-          // TODO: Commented out for testing, uncomment for final testing and deployment
-          // user_id: req.session.user_id,
+          user_id: req.session.user_id,
         }
       });
 
@@ -102,15 +99,13 @@ router.put('/:id', async (req, res) => {
 });
 
 // DELETE for removing a team
-// TODO: Add withAuth after testing with insomnia
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', withAuth, async (req, res) => {
   try {
     const team = await Team.destroy({
       where: {
         id: req.params.id,
 
-        // TODO: Commented out for testing, uncomment for final testing and deployment
-        // user_id: req.session.user_id,
+        user_id: req.session.user_id,
       }
     });
 

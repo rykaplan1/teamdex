@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { User, Team, Pokemon } = require('../../models');
+const withAuth = require('../../utils/auth');
 
 // GET for all pokemon logged into teams
 router.get('/', async (req, res) => {
@@ -38,8 +39,7 @@ router.get('/:id', async (req, res) => {
 });
 
 // Add pokemon
-// TODO: Add withAuth after testing with insomnia
-router.post('/', async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
   try {
     const newPokemon = await Pokemon.create({
       pokemon_name: req.body.pokemon_name,
@@ -57,8 +57,7 @@ router.post('/', async (req, res) => {
 });
 
 // Edit pokemon
-// TODO: Add withAuth after testing with insomnia
-router.put('/:id', async (req, res) => {
+router.put('/:id', withAuth, async (req, res) => {
   try {
     const updatedPokemon = await Pokemon.update({
       type_1: req.body.type_1,
@@ -68,8 +67,7 @@ router.put('/:id', async (req, res) => {
         where: {
           id: req.params.id,
 
-          // TODO: Commented out for testing, uncomment for final testing and deployment
-          // user_id: req.session.user_id
+          user_id: req.session.user_id
         }
       }
     );
@@ -87,15 +85,13 @@ router.put('/:id', async (req, res) => {
 });
 
 // Delete pokemon
-// TODO: Add withAuth after testing with insomnia
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', withAuth, async (req, res) => {
   try {
     const pokemon = await Pokemon.destroy({
       where: {
         id: req.params.id,
 
-        // TODO: Commented out for testing, uncomment for final testing and deployment
-        // user_id: req.session.user_id,
+        user_id: req.session.user_id,
       }
     });
 

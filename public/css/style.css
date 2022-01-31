@@ -16,7 +16,7 @@
   background-color: orangered;
 }
 
-.Water{
+.Water {
   background-color: blue;
 }
 
@@ -90,19 +90,18 @@ main {
 }
 
 @font-face {
-  font-family: 'pokemon_solidnormal';
-  src: url('./assets/pokefont/pokemon_solid-webfont.woff2') format('woff2'),
-       url('./assets/pokefont/pokemon_solid-webfont.woff') format('woff');
+  font-family: "pokemon_solidnormal";
+  src: url("./assets/pokefont/pokemon_solid-webfont.woff2") format("woff2"),
+    url("./assets/pokefont/pokemon_solid-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
-
 }
 
 h1 {
-  font-family: 'pokemon_solidnormal', sans-serif;
+  font-family: "pokemon_solidnormal", sans-serif;
 }
 
-/* Header Parallax Element Style*/ 
+/* Header Parallax Element Style*/
 .parallax {
   background-image: url(./assets/pokeball.jpg);
   height: 65%;
@@ -110,7 +109,6 @@ h1 {
   background-position: right 35% bottom 1%;
   background-repeat: no-repeat;
   background-size: cover;
-  
 }
 
 #title-text {
@@ -118,7 +116,7 @@ h1 {
 }
 
 .bottom-team {
-  position:absolute;
+  position: absolute;
   bottom: 23;
 }
 
@@ -128,16 +126,16 @@ h1 {
 }
 
 .bottom-text {
-  margin-bottom: 50px;
+  margin-bottom: 68px;
 }
 
 .navbar-nav {
-    display: flex;
-    flex-direction: row;
-    padding-left: 4;
-    padding-right: 4;
-    margin-bottom: 0;
-    list-style: none;
+  display: flex;
+  flex-direction: row;
+  padding-left: 4;
+  padding-right: 4;
+  margin-bottom: 0;
+  list-style: none;
 }
 
 .navbar-nav {
@@ -162,9 +160,16 @@ h1 {
 }
 
 .dashboard {
-  padding-left: 25px
+  padding-left: 25px;
 }
 
 #create-button {
   padding-left: 35px;
+}
+
+#sprite-tops {
+  padding: 0%;
+  margin: 0%;
+  height: 250px;
+  width: 18rem;
 }

@@ -10,8 +10,8 @@ const newTeam = [];
 
 // search PokeAPI for the respective Pokemon
 const searchForPokemon = async function (name) {
-    const pokeURL = `https://pokeapi.co/api/v2/pokemon/${name.toLowerCase()}`;
-    const response = await fetch(pokeURL);
+    const newURL = name.slice(0, 33) + name.slice(41);
+    const response = await fetch(newURL);
     const pokeData = await response.json();
     return pokeData;
 }
@@ -51,7 +51,7 @@ addPokemonBtn.addEventListener('click', async (event) => {
     if (newTeam.length >= 6) {
         alert('Team at capacity, max 6')
     } else {
-        const pokemonObj = await searchForPokemon(pokeListData.value);
+        const pokemonObj = await searchForPokemon(pokeListData.options[pokeListData.selectedIndex].getAttribute('data-url'));
         addToTeam(pokemonObj);
     }
 })
@@ -74,7 +74,7 @@ saveNewTeamBtn.addEventListener('click', async (event) => {
     // Post the pokemon to the database using the returned team_ID
     newTeam.forEach(pokemon => {
         let pokemonInfo;
-        if(pokemon.type[1]) {
+        if (pokemon.type[1]) {
             pokemonInfo = {
                 pokemon_name: pokemon.name,
                 type_1: pokemon.type[0].type.name,
@@ -97,9 +97,9 @@ saveNewTeamBtn.addEventListener('click', async (event) => {
         });
     });
 
-    const getNewTeam = await fetch(`/api/teams/${parsedTeam.id}`, {
-        method: 'GET'
-    });
-    const parsedGetNewTeam = await getNewTeam.json();
-    console.log(parsedGetNewTeam);
+    if (postTeam.ok) {
+        document.location.replace(`/dashboard`);
+    } else {
+        alert(postTeam.statusText);
+    }
 })

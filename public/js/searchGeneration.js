@@ -102,6 +102,7 @@ const displayPokemonBulk = async function (pokemon) {
         newName = pokeName.name.charAt(0).toUpperCase() + pokeName.name.slice(1);
         listEntry.value = newName;
         listEntry.innerHTML = newName;
+        listEntry.setAttribute('data-URL', pokeName.url);
         dataList.append(listEntry);
     })
 }

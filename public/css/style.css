@@ -89,20 +89,82 @@ main {
   padding-bottom: 25px;
 }
 
+@font-face {
+  font-family: 'pokemon_solidnormal';
+  src: url('./assets/pokefont/pokemon_solid-webfont.woff2') format('woff2'),
+       url('./assets/pokefont/pokemon_solid-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
 h1 {
-  font-family: 'Miltonian', cursive;
+  font-family: 'pokemon_solidnormal', sans-serif;
 }
 
 /* Header Parallax Element Style*/ 
 .parallax {
-  background-image: url(./pokeball.jpg);
-  height: 55%;
+  background-image: url(./assets/pokeball.jpg);
+  height: 65%;
   background-attachment: fixed;
-  background-position: center;
+  background-position: right 35% bottom 1%;
   background-repeat: no-repeat;
   background-size: cover;
+  
 }
 
 #title-text {
   padding-top: 150px;
+}
+
+.bottom-team {
+  position:absolute;
+  bottom: 23;
+}
+
+.bottom-username {
+  position: absolute;
+  bottom: 0;
+}
+
+.bottom-text {
+  margin-bottom: 50px;
+}
+
+.navbar-nav {
+    display: flex;
+    flex-direction: row;
+    padding-left: 4;
+    padding-right: 4;
+    margin-bottom: 0;
+    list-style: none;
+}
+
+.navbar-nav {
+  display: flex;
+  flex-direction: row;
+  padding-left: 4;
+  padding-right: 4;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+.signup {
+  padding-left: 35px;
+}
+
+.login {
+  padding-left: 25px;
+}
+
+.logout {
+  padding-left: 35px;
+}
+
+.dashboard {
+  padding-left: 25px
+}
+
+#create-button {
+  padding-left: 35px;
 }

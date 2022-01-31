@@ -33,20 +33,20 @@
           <a class="navbar-brand" href="/">Home</a>
           <ul class="navbar-nav mr-auto">
             {{#if logged_in}}
-            <li class="nav-item active">  
+            <li class="nav-item active dashboard">  
             <a class="nav-link" href="/dashboard">Dashboard <span class="sr-only"></span></a>
             </li>
-            <li class="nav-item active">  
-              <div class="nav-link" id="logout">Log Out <span class="sr-only"></span></div>
+            <li class="nav-item active logout">  
+              <a class="nav-link" href="/" id="logout">Log Out <span class="sr-only"></span></a>
             </li>
-            <li class="nav-item active">
-              <a href="/create-team"><button class="btn btn-outline-success my-2 my-sm-0">Create a Team</button></a>
+            <li class="nav-item active" id="create-button">
+              <a href="/create-team"><button class="btn btn-light my-2 my-sm-0">Create a Team</button></a>
             </li>
             {{else}}
-            <li class="nav-item active">
+            <li class="nav-item active login">
             <a class="nav-link" href="/login">Login <span class="sr-only"></span></a>
             </li>
-            <li class="nav-item active">
+            <li class="nav-item active signup">
             <a class="nav-link" href="/signup">Sign up <span class="sr-only"></span></a>
             </li>
             {{/if}}
@@ -58,10 +58,11 @@
     <section class="team-builder">
     <div class="parallax">
       <p id="title-text">
-        <h1 class="text-center fs-1 fw-bold text-light">Welcome to Teamdex</h1>
-        <h1 class="text-center fs-1 fw-bold text-light">Pokemon Team Builder</h1>
+        <h1 class="text-center  fw-bold text-light">T e a m d e x</h1>
+        <h1 class="text-center  fw-bold text-light">P o k e m o n  &nbsp;T e a m&nbsp;</h1>
+        <h1 class="text-center  fw-bold text-light">B u i l d e r</h1>
         {{#unless logged_in}}
-        <div class="text-center">
+        <div class="text-center mt-4">
         <a href="/login" class="btn btn-primary mx-auto" role="button">Login</a>
         <a href="/signup" class="btn btn-primary mx-auto" role="button">Sign Up!</a>
         </div>

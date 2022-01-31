@@ -69,10 +69,7 @@ saveNewTeamBtn.addEventListener('click', async (event) => {
         body: JSON.stringify(teamInfo),
         headers: { 'Content-Type': 'application/json' },
     });
-
-    // console.log(postTeam);
-    // const getTeam = await fetch('/api/teams/');
-    // console.log(getTeam);
+    const parsedTeam = await postTeam.json();
 
     // Post the pokemon to the database using the returned team_ID
     newTeam.forEach(pokemon => {
@@ -82,14 +79,14 @@ saveNewTeamBtn.addEventListener('click', async (event) => {
                 pokemon_name: pokemon.name,
                 type_1: pokemon.type[0].type.name,
                 type_2: pokemon.type[1].type.name,
-                team_id: postTeam.id,
+                team_id: parsedTeam.id,
                 sprite: pokemon.sprite
             }
         } else {
             pokemonInfo = {
                 pokemon_name: pokemon.name,
                 type_1: pokemon.type[0].type.name,
-                team_id: postTeam.id,
+                team_id: parsedTeam.id,
                 sprite: pokemon.sprite
             }
         }
@@ -100,8 +97,9 @@ saveNewTeamBtn.addEventListener('click', async (event) => {
         });
     });
 
-    // const getNewTeam = await fetch(`/api/teams/${postTeam.id}`, {
-    //     method: 'GET'
-    // });
-    // console.log(getNewTeam);
+    const getNewTeam = await fetch(`/api/teams/${parsedTeam.id}`, {
+        method: 'GET'
+    });
+    const parsedGetNewTeam = await getNewTeam.json();
+    console.log(parsedGetNewTeam);
 })

@@ -41,7 +41,7 @@ The visual shows the app running on a deployed heroku server.
 ![Team Dex Static Visual](./assets/teamdex-visual.png)
 
 ## Deployed Link
-*Deployed Heroku link here*
+https://teamdex.herokuapp.com/
 
 ## Collaborators
 Michael Hranek - GitHub: [MHranek](https://github.com/MHranek)
